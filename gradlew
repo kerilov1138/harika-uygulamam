@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# GitHub Runner'da gradle komutu varsa onu kullanır, yoksa hata verir.
+# GitHub Runner environment wrapper
 if command -v gradle >/dev/null 2>&1; then
   gradle "$@"
 else

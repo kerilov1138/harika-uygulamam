@@ -12,13 +12,13 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Create gradlew if missing
+      - name: Ensure gradlew exists and is executable
         run: |
           if [ ! -f "gradlew" ]; then
             echo '#!/bin/sh' > gradlew
             echo 'gradle "$@"' >> gradlew
-            chmod +x gradlew
           fi
+          chmod +x gradlew
 
       - name: Build with Gradle
         run: ./gradlew :app:assembleDebug
