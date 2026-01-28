@@ -71,11 +71,9 @@ fun WebAppScreen() {
                         loadWithOverviewMode = true
                         useWideViewPort = true
                         databaseEnabled = true
-                        setSupportZoom(false)
                         mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                     }
                     
-                    // Beyaz ekranı önlemek için arka planı şeffaf yapıp Color.White Surface üzerinde gösteriyoruz
                     setBackgroundColor(0)
                     loadUrl("file:///android_asset/www/index.html")
                 }
@@ -83,7 +81,10 @@ fun WebAppScreen() {
         )
         
         if (isLoading) {
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = Modifier.fillMaxSize(), 
+                contentAlignment = Alignment.Center
+            ) {
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
             }
         }
