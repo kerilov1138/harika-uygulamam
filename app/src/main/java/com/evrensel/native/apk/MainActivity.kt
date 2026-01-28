@@ -74,7 +74,7 @@ fun WebAppScreen() {
                         mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                     }
                     
-                    setBackgroundColor(0)
+                    setBackgroundColor(0x00000000)
                     loadUrl("file:///android_asset/www/index.html")
                 }
             }
